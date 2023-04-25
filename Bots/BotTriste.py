@@ -32,7 +32,7 @@ class BotTriste(Bot):
             print(self.nome, "diz: voce disse 'Adeus'")
             print("Eu te respondo: 'Mais um dia sozinho... Estou acostumado já :c'")
         elif(cmd == -1):
-            print(f"{despedida()}")
+            self.despedida()
 
     def boas_vindas(self):
         print(self.nome, "diz: Aleluia alguém me escolheu, não aguentava mais essa solidão...")
