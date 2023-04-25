@@ -25,18 +25,11 @@ class SistemaChatBot:
     def escolhe_bot(self):
         
         escolha = int(input("Escolha o bot que deseja conversar!"))
-        #count = 1
-        """for bot in self.__lista_bots:
-            if count == escolha:
-                self.__bot = bot
-            count += 1"""
         self.__bot = self.__lista_bots[escolha-1]
-        print(self.__bot)
 
     def mostra_comandos_bot(self):
         
         ##mostra os comandos disponíveis no bot escolhido
-        print(f"{self.__bot.boas_vindas()}")
         self.__bot.mostra_comandos()
 
 
@@ -59,7 +52,9 @@ class SistemaChatBot:
         self.escolhe_bot()
 
 
+        self.__bot.boas_vindas()
         while(True):
+            print()
             self.mostra_comandos_bot()
             opcao = self.le_envia_comando()
             if(opcao == "-1"):
