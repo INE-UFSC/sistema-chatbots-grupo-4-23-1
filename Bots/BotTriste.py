@@ -19,18 +19,20 @@ class BotTriste(Bot):
         super().mostra_comandos()
     
     def executa_comando(self,cmd):
-        if (cmd == "1"):
+        if (cmd == 1):
             print(self.nome, "diz: voce disse 'Bom Dia'")
             print("Eu te respondo: 'Queria eu que fosse um bom dia...'")
-        elif (cmd == "2"):
+        elif (cmd == 2):
             print(self.nome, "diz: voce disse 'Qual o seu nome?'")
             print("Eu te respondo: 'Normalmente me chamam de idiota, burro... Mas meu nome verdadeiro é ", self.nome)
-        elif (cmd == "3"):
+        elif (cmd == 3):
             print(self.nome, "diz: voce disse 'Quero um conselho'")
             print("Eu te respondo: 'Também estou precisando, mas até agora nada :c'")
-        elif (cmd == "4"):
+        elif (cmd == 4):
             print(self.nome, "diz: voce disse 'Adeus'")
             print("Eu te respondo: 'Mais um dia sozinho... Estou acostumado já :c'")
+        elif(cmd == -1):
+            print(f"{despedida()}")
 
     def boas_vindas(self):
         print(self.nome, "diz: Aleluia alguém me escolheu, não aguentava mais essa solidão...")
