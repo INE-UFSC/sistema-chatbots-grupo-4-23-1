@@ -13,14 +13,15 @@ class SistemaChatBot:
 
     def mostra_menu(self):
         pass
+        print(f"Os chat bots disponíveis para conversa são:")
         count = 1
         for bot in self.__lista_bots:
-            print(f"{bot.nome} - {count}")
+            print(f"{bot.apresentacao()} - {count}")
             count += 1
     
     def escolhe_bot(self):
         pass
-        escolha = int(input("Escolha que deseja conversar!"))
+        escolha = int(input("Escolha o bot que deseja conversar!"))
         count = 1
         for bot in self.__lista_bots:
             if count == escolha:
@@ -30,9 +31,9 @@ class SistemaChatBot:
     def mostra_comandos_bot(self):
         pass
         ##mostra os comandos disponíveis no bot escolhido
+        print(f"{self.__bot.boas_vindas()}")
         for key, value in self.__bot.comandos.items():
             print(f"Comando {key} - {value}")
-
 
 
     def le_envia_comando(self):
@@ -41,6 +42,7 @@ class SistemaChatBot:
         for key in self.__bot.comandos.keys():
             if key == escolha
                 return key
+                
         
     def inicio(self):
         pass
