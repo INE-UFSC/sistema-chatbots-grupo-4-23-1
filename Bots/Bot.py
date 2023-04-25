@@ -21,8 +21,8 @@ class Bot(ABC):
         self.__nome = nome
 
     def mostra_comandos(self):
-        for i in self.comandos.keys():
-            print(i, "-", self.comandos[i])
+        for key, value in self.comandos.items():
+            print(f"{key} - {value}")
 
     @abstractmethod
     def executa_comando(self,cmd):

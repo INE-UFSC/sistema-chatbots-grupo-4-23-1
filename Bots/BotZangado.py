@@ -2,6 +2,7 @@ from Bots.Bot import Bot
 
 class BotZangado(Bot):
     def __init__(self,nome):
+        super().__init__(nome)
         self.__nome = nome
 
     @property
@@ -19,19 +20,19 @@ class BotZangado(Bot):
         super().mostra_comandos()
     
     def executa_comando(self,cmd):
-        if (cmd == 1):
+        if (cmd == '1'):
             print(self.nome, "diz: voce disse 'Bom Dia'")
             print("Eu te respondo: Bom dia pra quem?")
-        elif (cmd == 2):
+        elif (cmd == '2'):
             print(self.nome, "diz: voce disse 'Qual o seu nome?'")
             print("Eu te respondo: Não te interessa! Mas é", self.nome)
-        elif (cmd == 3):
+        elif (cmd == '3'):
             print(self.nome, "diz: voce disse 'Quero um conselho'")
             print("Eu te respondo: 'Pergunda pro seu pai!")
-        elif (cmd == 4):
+        elif (cmd == '4'):
             print(self.nome, "diz: voce disse 'Adeus'")
             print("Eu te respondo: 'Ainda esta aqui :('")
-        elif (cmd == -1):
+        elif (cmd == '-1'):
             self.despedida()
 
     def boas_vindas(self):
