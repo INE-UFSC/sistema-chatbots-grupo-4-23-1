@@ -9,7 +9,7 @@ class SistemaChatBot:
     
     def boas_vindas(self):
         
-        return (f"Bem-vindo ao SistemaBot!")
+        return (f"Bem-vindo ao {self.__empresa}!")
 
     def mostra_menu(self):
         
@@ -56,4 +56,3 @@ class SistemaChatBot:
         mostra_menu()
         escolhe_bot()
         mostra_comandos_bot()
-        le_envia_comando()
