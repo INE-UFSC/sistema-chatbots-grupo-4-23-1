@@ -8,11 +8,11 @@ class SistemaChatBot:
         self.__bot = None
     
     def boas_vindas(self):
-        pass
+        
         return (f"Bem-vindo ao SistemaBot!")
 
     def mostra_menu(self):
-        pass
+        
         print(f"Os chat bots disponíveis para conversa são:")
         count = 1
         for bot in self.__lista_bots:
@@ -20,7 +20,7 @@ class SistemaChatBot:
             count += 1
     
     def escolhe_bot(self):
-        pass
+        
         escolha = int(input("Escolha o bot que deseja conversar!"))
         count = 1
         for bot in self.__lista_bots:
@@ -29,7 +29,7 @@ class SistemaChatBot:
             count += 1
 
     def mostra_comandos_bot(self):
-        pass
+        
         ##mostra os comandos disponíveis no bot escolhido
         print(f"{self.__bot.boas_vindas()}")
         for key, value in self.__bot.comandos.items():
@@ -37,7 +37,7 @@ class SistemaChatBot:
 
 
     def le_envia_comando(self):
-        pass
+    
         escolha = int(input("Escolha o comando que deseja que o BOT realize: "))
         for key in self.__bot.comandos.keys():
             if key == escolha
@@ -45,7 +45,7 @@ class SistemaChatBot:
                 
         
     def inicio(self):
-        pass
+        
         ##mostra mensagem de boas-vindas do sistema
         ##mostra o menu ao usuário
         ##escolha do bot      
