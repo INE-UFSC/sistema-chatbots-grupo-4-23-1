@@ -19,13 +19,21 @@ class SistemaChatBot:
         print(f"Os chat bots disponíveis para conversa são:")
         count = 1
         for bot in self.__lista_bots:
-            print(f"{bot.apresentacao()} - {count}")
+            print(f'{count} - ', end = '')
+            bot.apresentacao()
             count += 1
     
-    def escolhe_bot(self):
-        
-        escolha = int(input("Escolha o bot que deseja conversar!"))
+    def escolhe_bot(self): 
+        escolha = 0
+        while escolha not in [1,2,3,-1]:
+            escolha = int(input("Escolha o bot que deseja conversar! (-1 para sair do programa): "))
+            print()
+            if escolha not in [1,2,3,-1]:
+                print('Erro! Escolha um valor válido.')
+        if escolha == -1:
+            return '-1'
         self.__bot = self.__lista_bots[escolha-1]
+        return str(escolha)
 
     def mostra_comandos_bot(self):
         
@@ -34,7 +42,8 @@ class SistemaChatBot:
 
 
     def le_envia_comando(self):
-        escolha = input("Escolha o comando que deseja que o BOT realize: ")
+        escolha = input("Digite o comando desejado (ou -1 fechar o sistema sair): ")
+        print()
         return escolha
             
                 
@@ -47,17 +56,21 @@ class SistemaChatBot:
         ##mostra mensagens de boas-vindas do bot escolhido
         ##entra no loop de mostrar comandos do bot e escolher comando do bot até o usuário definir a saída
         ##ao sair mostrar a mensagem de despedida do bot
-        self.boas_vindas()
-        self.mostra_menu()
-        self.escolhe_bot()
-
-
-        self.__bot.boas_vindas()
+        opcao = None
         while(True):
-            print()
-            self.mostra_comandos_bot()
-            opcao = self.le_envia_comando()
-            if(opcao == "-1"):
+            if opcao == '-1':
+                print('Fim do programa.')
                 break
-            else:
-                self.__bot.executa_comando(opcao)
+            self.boas_vindas()
+            self.mostra_menu()
+            opcao = self.escolhe_bot()
+
+            while(opcao != '-1'):
+                print()
+                self.__bot.boas_vindas()
+                self.mostra_comandos_bot()
+                opcao = self.le_envia_comando()
+                if(opcao == "-1" or opcao == "4"):
+                    break
+                else:
+                    self.__bot.executa_comando(opcao)
