@@ -25,13 +25,18 @@ class SistemaChatBot:
     
     def escolhe_bot(self): 
         escolha = 0
-        while escolha not in [1,2,3,-1]:
+        while True:
             escolha = int(input("Escolha o bot que deseja conversar! (-1 para sair do programa): "))
             print()
-            if escolha not in [1,2,3,-1]:
+
+            if escolha == -1:
+                return '-1'
+
+            if escolha < 1 or escolha > len(self.__lista_bots): 
                 print('Erro! Escolha um valor válido.')
-        if escolha == -1:
-            return '-1'
+            else:
+                break
+
         self.__bot = self.__lista_bots[escolha-1]
         return str(escolha)
 
