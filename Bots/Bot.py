@@ -12,6 +12,15 @@ class Bot(ABC):
                          "3": "Quero um conselho",
                          "4": "Adeus"}
 
+        self.__perguntas = {"1", : self.nome+" diz: voce disse "+self.comandos["1"]
+                            "2", : self.nome+" diz: voce disse "+self.comandos["1"]
+                            "3", : self.nome+" diz: voce disse "+self.comandos["1"]
+                            "4", : self.nome+" diz: voce disse "+self.comandos["1"]}
+
+    @property
+    def perguntas(self):
+        return self.__perguntas
+
     @property
     def nome(self):
         return self.__nome
