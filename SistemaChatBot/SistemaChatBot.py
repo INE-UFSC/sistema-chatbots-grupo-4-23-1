@@ -9,49 +9,73 @@ class SistemaChatBot:
         ##verificar se a lista de bots contém apenas bots
         self.__lista_bots=lista_bots
         self.__bot = None
-    
-    def boas_vindas(self):
-        
-        return (f"Bem-vindo ao {self.__empresa}!")
+        self.working = True
+        self.working2 = True
 
-    def mostra_menu(self):
-        
+    
+    def boas_vindas(self) -> None:
+        print()
+        print(f"Bem-vindo ao {self.__empresa}!")
+        print()
+
+    def mostra_menu(self) -> None:
         print(f"Os chat bots disponíveis para conversa são:")
         count = 1
         for bot in self.__lista_bots:
-            print(f'{count} - ', end = '')
-            bot.apresentacao()
+            print(f'{count} - {bot.apresentacao()}') 
             count += 1
     
-    def escolhe_bot(self): 
-        escolha = 0
+    def escolhe_bot(self) -> None: 
+        self.working2 = True
         while True:
-            escolha = int(input("Escolha o bot que deseja conversar! (-1 para sair do programa): "))
+            try:
+                escolha = int(input("Escolha o bot que deseja conversar! (-1 para sair do programa): "))
+            except Exception as e:
+                print()
+                print(e)
+                self.working2 = False
+                print()
+                return None
+
             print()
 
-            if escolha == -1:
-                return '-1'
+            if (escolha == -1):
+                self.working = False
+                self.working2 = False
+                return None
 
-            if escolha < 1 or escolha > len(self.__lista_bots): 
+            if (escolha < 1) or (escolha > len(self.__lista_bots)): 
                 print('Erro! Escolha um valor válido.')
             else:
+                self.__bot = self.__lista_bots[escolha-1] 
+                print(self.__bot.boas_vindas())
                 break
 
-        self.__bot = self.__lista_bots[escolha-1]
-        return str(escolha)
 
-    def mostra_comandos_bot(self):
-        
+    def mostra_comandos_bot(self) -> None:
+        print() 
         ##mostra os comandos disponíveis no bot escolhido
-        self.__bot.mostra_comandos()
+        print(self.__bot.mostra_comandos())
 
 
-    def le_envia_comando(self):
-        escolha = input("Digite o comando desejado (ou -1 fechar o sistema sair): ")
-        print()
-        return escolha
-            
-                
+    def le_envia_comando(self) -> None:
+        try:
+            escolha = int(input("Digite o comando desejado (ou -1 fechar o sistema sair): "))
+        except Exception as e:
+            print()
+            print(e)
+            return None
+        else:
+            if (escolha == -1):
+                self.working = False
+                self.working2 = False
+                return None
+
+            print()
+            print(self.__bot.executa_comando(escolha))
+            if (escolha == 4):
+                self.working2 = False
+                return None
         
     def inicio(self):
         
@@ -61,21 +85,17 @@ class SistemaChatBot:
         ##mostra mensagens de boas-vindas do bot escolhido
         ##entra no loop de mostrar comandos do bot e escolher comando do bot até o usuário definir a saída
         ##ao sair mostrar a mensagem de despedida do bot
-        opcao = None
-        while(True):
-            if opcao == '-1':
-                print('Fim do programa.')
-                break
+        while self.working:
+
             self.boas_vindas()
             self.mostra_menu()
-            opcao = self.escolhe_bot()
 
-            while(opcao != '-1'):
-                print()
-                self.__bot.boas_vindas()
+            self.escolhe_bot()
+
+            while self.working2:
                 self.mostra_comandos_bot()
-                opcao = self.le_envia_comando()
-                if(opcao == "-1" or opcao == "4"):
-                    break
-                else:
-                    self.__bot.executa_comando(opcao)
+
+                self.le_envia_comando()
+
+        print("Fim do programa!")
+
