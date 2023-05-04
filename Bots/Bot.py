@@ -1,7 +1,7 @@
 ##implemente as seguintes classes
 
 from abc import ABC, abstractmethod
-from Comando import Comando
+from Bots.Comando import Comando
 
 class Bot(ABC):
     def __init__(self, nome: str, lista_comando: list[Comando]):
@@ -15,12 +15,9 @@ class Bot(ABC):
         return self.__lista_comandos
 
     @property
-    def perguntas(self):
-        return self.__perguntas
-
-    @property
     def nome(self):
         return self.__nome
+
 
     def mostra_comandos(self) -> str:
         comandos = ""
@@ -36,6 +33,8 @@ class Bot(ABC):
                 resposta += f"Eu te respondo: '{x.resposta}'"
 
                 return resposta
+        else:
+            return "ERROR: Opção invalida!"
 
     @abstractmethod
     def boas_vindas() -> str:

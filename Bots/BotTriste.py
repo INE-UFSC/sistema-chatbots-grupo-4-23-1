@@ -1,8 +1,9 @@
 from Bots.Bot import Bot
-from Comando import Comando
+from Bots.Comando import Comando
 
 class BotTriste(Bot):
     def __init__(self,nome):
+        self.__nome = nome
 
         lista_comando = [Comando(1, "Bom Dia!", 'Queria eu que fosse um bom dia...'),
                          Comando(2, "Qual o seu nome?", "Normamente me chamam de idiota, burro... Mas meu nome verdadeiro é "+self.nome),
@@ -10,6 +11,10 @@ class BotTriste(Bot):
                          Comando(4, "Adeus", "Mas um dia sozinho... Estou acostumado.")]
 
         super().__init__(nome, lista_comando)
+
+    @property
+    def nome(self):
+        return self.__nome
 
     def apresentacao(self) -> str:
         return ":( Meu nome é "+self.nome+", seja bem vindo, eu acho... :c"
