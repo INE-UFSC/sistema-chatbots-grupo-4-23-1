@@ -1,21 +1,18 @@
 ##implemente as seguintes classes
 
 from abc import ABC, abstractmethod
-import random as r
+from Comando import Comando
 
 class Bot(ABC):
-
-    def __init__(self, nome):
+    def __init__(self, nome: str, lista_comando: list[Comando]):
         self.__nome = nome
-        self.comandos = {"1": "Bom dia",
-                         "2": "Qual o seu nome?",
-                         "3": "Quero um conselho",
-                         "4": "Adeus"}
 
-        self.__perguntas = {"1" : self.__nome+" diz: voce disse "+self.comandos["1"],
-                            "2" : self.__nome+" diz: voce disse "+self.comandos["2"],
-                            "3" : self.__nome+" diz: voce disse "+self.comandos["3"],
-                            "4" : self.__nome+" diz: voce disse "+self.comandos["4"]}
+        self.__lista_comandos = lista_comando
+
+
+    @property
+    def lista_comandos(self):
+        return self.__lista_comandos
 
     @property
     def perguntas(self):
@@ -29,18 +26,25 @@ class Bot(ABC):
     def nome(nome):
         self.__nome = nome
 
-    def mostra_comandos(self):
-        for key, value in self.comandos.items():
-            print(f"{key} - {value}")
+    def mostra_comandos(self) -> str:
+        comandos = ""
+        for x in self.lista_comandos:
+           comandos += f"{x.cmd} - {x.pergunta} \n" 
+
+        return comandos
+
+    def executa_comando(self, cmd: int) -> str:
+        for x in self.lista_comandos:
+            if (x.cmd == cmd):
+                resposta = f"{self.nome} diz: Voce disse: '{x.pergunta}' \n"
+                resposta += f"Eu te respondo: '{x.resposta}'"
+
+                return resposta
 
     @abstractmethod
-    def executa_comando(self,cmd):
-        pass
-
-    @abstractmethod
-    def boas_vindas():
+    def boas_vindas() -> str:
         pass
     
     @abstractmethod
-    def despedida():
+    def despedida() -> str:
         pass
