@@ -22,10 +22,6 @@ class Bot(ABC):
     def nome(self):
         return self.__nome
 
-    @nome.setter
-    def nome(nome):
-        self.__nome = nome
-
     def mostra_comandos(self) -> str:
         comandos = ""
         for x in self.lista_comandos:

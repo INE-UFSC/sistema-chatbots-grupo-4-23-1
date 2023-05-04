@@ -19,4 +19,4 @@ class BotFeliz(Bot):
         return self.nome+" diz: Fico muito feliz que me escolheu, melhor dia de sempre!"
 
     def despedida(self) -> str:
-        return self.nome+" diz: 'Que pena que vai embora, gostei muito de falar com voce!'")
+        return self.nome+" diz: 'Que pena que vai embora, gostei muito de falar com voce!'"
