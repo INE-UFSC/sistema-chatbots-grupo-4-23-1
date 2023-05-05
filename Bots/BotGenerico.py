@@ -16,10 +16,10 @@ class BotGenerico(Bot):
         return self.__nome
 
     def apresentacao(self) -> str:
-        return "Meu nome é "+self.nome + ', ' + self.__apresentacao
+        return self.__apresentacao
 
     def boas_vindas(self) -> str:
-        return "Meu nome é "+self.nome + ', ' + self.__boas_vindas
+        return self.__boas_vindas
 
     def despedida(self) -> str:
-        return "Meu nome é "+self.nome + ', ' + self.__despedida
+        return self.__despedida

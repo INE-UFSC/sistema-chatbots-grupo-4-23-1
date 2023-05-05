@@ -1,41 +1,41 @@
 {
     "bot1" : 
         {
-            "name" : "bot teste 1",
+            "name" : "Wanda",
             "lista_comandos" : [
-                [1, "pergunta 1", "resposta1"],
-                [2, "pergunta 2", "resposta2"],
-                [3, "pergunta 3", "resposta3"],
-                [4, "pergunta 4", "resposta4"]
+                [1, "Bom dia!", "Bom dia!"],
+                [2, "como você está?", "Estou bem!"],
+                [3, "Você é muito direta", "Sim"],
+                [4, "Adeus", "..."]
             ],
-            "apresentacao" : "apresentacao 1",
-            "boas_vindas" : "boas_vindas 1",
-            "despedida" : "despedida 1"
+            "apresentacao" : "Eu sou Wanda",
+            "boas_vindas" : "Boas vinda!",
+            "despedida" : "..."
         },
     "bot2" : 
         {
-            "name" : "bot teste 2",
+            "name" : "Estudante",
             "lista_comandos" : [
-                [1, "pergunta 1", "resposta1"],
-                [2, "pergunta 2", "resposta2"],
-                [3, "pergunta 3", "resposta3"],
-                [4, "pergunta 4", "resposta4"]
+                [1, "Bom dia!", "Bom dia!"],
+                [2, "como você está?", "Hoje tem apresentação da Lúcia Helena"],
+                [3, "Você é muito direta", "Sim"],
+                [4, "Adeus", "..."]
             ],
-            "apresentacao" : "apresentacao 2",
-            "boas_vindas" : "boas_vindas 2",
-            "despedida" : "despedida 2"
+            "apresentacao" : "Eu sou Estudante",
+            "boas_vindas" : "Boas vinda!",
+            "despedida" : "..."
         },
     "bot3" : 
         {
-            "name" : "bot teste 3",
+            "name" : "Nome",
             "lista_comandos" : [
-                [1, "pergunta 1", "resposta1"],
-                [2, "pergunta 2", "resposta2"],
-                [3, "pergunta 3", "resposta3"],
-                [4, "pergunta 4", "resposta4"]
+                [1, "Bom dia!", "Bom dia!"],
+                [2, "como você está?", "Estou bem!"],
+                [3, "Você é muito direta", "Sim"],
+                [4, "Adeus", "..."]
             ],
-            "apresentacao" : "apresentacao 3",
-            "boas_vindas" : "boas_vindas 3",
-            "despedida" : "despedida 3"
+            "apresentacao" : "Eu sou Nome",
+            "boas_vindas" : "Boas vinda!",
+            "despedida" : "..."
         }
 }
