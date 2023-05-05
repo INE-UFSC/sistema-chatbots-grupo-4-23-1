@@ -73,7 +73,7 @@ class SistemaChatBot:
 
             print()
             print(self.__bot.executa_comando(escolha))
-            if (escolha == 4):
+            if (escolha == len(self.__bot.lista_comandos)):
                 self.working2 = False
                 return None
         
