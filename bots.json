@@ -1,0 +1,41 @@
+{
+    "bot1" : 
+        {
+            "name" : "bot teste 1",
+            "lista_comandos" : [
+                [1, "pergunta 1", "resposta1"],
+                [2, "pergunta 2", "resposta2"],
+                [3, "pergunta 3", "resposta3"],
+                [4, "pergunta 4", "resposta4"]
+            ],
+            "apresentacao" : "apresentacao 1",
+            "boas_vindas" : "boas_vindas 1",
+            "despedida" : "despedida 1"
+        },
+    "bot2" : 
+        {
+            "name" : "bot teste 2",
+            "lista_comandos" : [
+                [1, "pergunta 1", "resposta1"],
+                [2, "pergunta 2", "resposta2"],
+                [3, "pergunta 3", "resposta3"],
+                [4, "pergunta 4", "resposta4"]
+            ],
+            "apresentacao" : "apresentacao 2",
+            "boas_vindas" : "boas_vindas 2",
+            "despedida" : "despedida 2"
+        },
+    "bot3" : 
+        {
+            "name" : "bot teste 3",
+            "lista_comandos" : [
+                [1, "pergunta 1", "resposta1"],
+                [2, "pergunta 2", "resposta2"],
+                [3, "pergunta 3", "resposta3"],
+                [4, "pergunta 4", "resposta4"]
+            ],
+            "apresentacao" : "apresentacao 3",
+            "boas_vindas" : "boas_vindas 3",
+            "despedida" : "despedida 3"
+        }
+}
