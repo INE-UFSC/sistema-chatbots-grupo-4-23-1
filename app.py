@@ -5,7 +5,7 @@ from Bots.BotTriste import BotTriste
 from Bots.BotFeliz import BotFeliz
 
 ###construa a lista de bots disponíveis aqui
-lista_bots = [BotZangado("Yoda"), BotTriste("Stitch"), BotFeliz("Sun")]
+lista_bots = [BotZangado("Yoda"), BotTriste("Stitch"), BotFeliz("Sun"), BotHogRider("Hog Rider")]
 
 sys = scb.SistemaChatBot("CrazyBots",lista_bots)
 sys.inicio()
